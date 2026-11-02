@@ -88,3 +88,10 @@ export function threadPath(doc: PatternDoc): WovenRow[] {
 export function stitchOrder(doc: PatternDoc): StitchBead[] {
   return threadPath(doc).flatMap((row) => [...row.beads]);
 }
+
+/** The last row number a beader reads: peyote counts two per grid row, brick and loom one. */
+export function wovenRowCount(doc: PatternDoc): number {
+  const specs = rowSpecs(doc);
+  const lastRows = specs[specs.length - 1]?.rows ?? [];
+  return lastRows[lastRows.length - 1] ?? 0;
+}

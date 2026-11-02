@@ -93,4 +93,5 @@ export interface LicenceTerms {
 
 export interface ChartSvgOptions {
   readonly label?: string;
+  readonly firstRow?: 'top' | 'bottom';
 }

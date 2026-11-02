@@ -16,7 +16,7 @@ export { PatternDocIssue } from './PatternDocIssue';
 export { recolour, recolourToPalette } from './recolour';
 export { RowDirection } from './RowDirection';
 export { Stitch } from './Stitch';
-export { stitchOrder, threadPath } from './stitchOrder';
+export { stitchOrder, threadPath, wovenRowCount } from './stitchOrder';
 export { renderChartSvg } from './svg';
 export { assertPatternDoc, MAX_CHART_SIDE, validatePatternDoc } from './validate';
 export { wordChart } from './wordChart';

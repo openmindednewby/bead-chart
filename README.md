@@ -24,9 +24,10 @@ renderChartSvg(doc, { label: 'Diamond bracelet chart' });
 | `validatePatternDoc`, `assertPatternDoc` | Checks untrusted JSON: shape, at most 400x400, every code in the Delica list |
 | `geometry`, `beadPosition` | Bead positions in bead units, y grows upward from the first worked row |
 | `threadPath`, `stitchOrder` | Woven rows and beads in thread order |
+| `wovenRowCount` | The last row number a beader reads. Peyote: 2 x `height`, so a 48-high chart is 96 woven rows. Brick and loom: `height`. Use it wherever a total is shown; `height` counts grid rows |
 | `wordChart` | Per woven row: row numbers, direction, colour runs |
 | `beadCounts`, `shoppingList` | Beads per colour, most used first; the list adds name, hex, discontinued |
-| `renderChartSvg` | SVG string, beads drawn in stitch order. Validates first; only numbers, codes from the list and an escaped label reach the markup |
+| `renderChartSvg` | SVG string, beads drawn in stitch order. `firstRow: 'top'` (default) puts row 1 on the top edge with numbers growing down; `'bottom'` mirrors it. Validates first; only numbers, codes from the list and an escaped label reach the markup |
 | `generateMotif`, `MOTIF_KINDS` | Plain config to doc. Same config, same doc. Uses `harmony` from `@dloizides/color-science`, current beads only |
 | `recolour`, `recolourToPalette` | New doc, same geometry. Colours mapped to one code merge |
 | `DELICA_COLOURS`, `findDelica`, `requireDelica`, `availableDelica`, `nearestDelica`, `DELICA_ATTRIBUTION` | The colour list and its credit line |
