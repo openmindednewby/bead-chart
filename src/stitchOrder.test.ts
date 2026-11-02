@@ -1,6 +1,6 @@
 import golden from './__golden__/stitch-order.json';
 import { Stitch } from './Stitch';
-import { stitchOrder, threadPath } from './stitchOrder';
+import { stitchOrder, threadPath, wovenRowCount } from './stitchOrder';
 import { solidDoc } from './testDocs.test-helper';
 
 function rowCol(stitch: Stitch, width: number, height: number): number[][] {
@@ -81,5 +81,55 @@ describe('threadPath', () => {
     const rows = threadPath(solidDoc(Stitch.Peyote, 1, 2));
 
     expect(rows.map((row) => row.rows)).toEqual([[1, 2], [3]]);
+  });
+});
+
+describe('wovenRowCount', () => {
+  it('with a 12x48 peyote doc, returns 96', () => {
+    const count = wovenRowCount(solidDoc(Stitch.Peyote, 12, 48));
+
+    expect(count).toBe(96);
+  });
+
+  it('with a 12x64 peyote doc, returns 128', () => {
+    const count = wovenRowCount(solidDoc(Stitch.Peyote, 12, 64));
+
+    expect(count).toBe(128);
+  });
+
+  it('with a 5x4 peyote doc, returns the last number of the word chart, not its 7 lines', () => {
+    const doc = solidDoc(Stitch.Peyote, 5, 4);
+
+    const count = wovenRowCount(doc);
+
+    expect(threadPath(doc)).toHaveLength(7);
+    expect(count).toBe(8);
+  });
+
+  it('with a 1x1 peyote doc, returns 2 because the first pass strings rows 1 and 2', () => {
+    const count = wovenRowCount(solidDoc(Stitch.Peyote, 1, 1));
+
+    expect(count).toBe(2);
+  });
+
+  it('with a 1x3 peyote doc, returns the last label 5 of rows 1+2, 3, 5', () => {
+    const doc = solidDoc(Stitch.Peyote, 1, 3);
+
+    const count = wovenRowCount(doc);
+
+    expect(threadPath(doc).map((row) => row.rows)).toEqual([[1, 2], [3], [5]]);
+    expect(count).toBe(5);
+  });
+
+  it('with a 6x48 brick doc, returns 48', () => {
+    const count = wovenRowCount(solidDoc(Stitch.Brick, 6, 48));
+
+    expect(count).toBe(48);
+  });
+
+  it('with a 6x48 loom doc, returns 48', () => {
+    const count = wovenRowCount(solidDoc(Stitch.Loom, 6, 48));
+
+    expect(count).toBe(48);
   });
 });
