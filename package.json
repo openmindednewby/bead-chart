@@ -1,6 +1,6 @@
 {
   "name": "@dloizides/bead-chart",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "One thread-path rule for bead charts: PatternDoc schema, peyote, brick and loom geometry, stitch order, word chart, counts, SVG, Miyuki Delica colour data, rule-based motif generator, recolour and licence codes. No DOM, no React.",
   "keywords": [
     "beading",
