@@ -1,0 +1,17 @@
+[
+  { "rows": [1, 2], "direction": "ltr", "beads": 5, "runs": [
+    { "code": "DB0001", "count": 1 }, { "code": "DB0002", "count": 1 }, { "code": "DB0003", "count": 1 },
+    { "code": "DB0001", "count": 1 }, { "code": "DB0002", "count": 1 } ] },
+  { "rows": [3], "direction": "rtl", "beads": 3, "runs": [
+    { "code": "DB0003", "count": 1 }, { "code": "DB0001", "count": 1 }, { "code": "DB0002", "count": 1 } ] },
+  { "rows": [4], "direction": "ltr", "beads": 2, "runs": [
+    { "code": "DB0002", "count": 1 }, { "code": "DB0001", "count": 1 } ] },
+  { "rows": [5], "direction": "rtl", "beads": 3, "runs": [
+    { "code": "DB0002", "count": 1 }, { "code": "DB0001", "count": 1 }, { "code": "DB0003", "count": 1 } ] },
+  { "rows": [6], "direction": "ltr", "beads": 2, "runs": [
+    { "code": "DB0001", "count": 1 }, { "code": "DB0002", "count": 1 } ] },
+  { "rows": [7], "direction": "rtl", "beads": 3, "runs": [
+    { "code": "DB0003", "count": 1 }, { "code": "DB0001", "count": 2 } ] },
+  { "rows": [8], "direction": "ltr", "beads": 2, "runs": [
+    { "code": "DB0001", "count": 1 }, { "code": "DB0003", "count": 1 } ] }
+]

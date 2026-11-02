@@ -1,0 +1,84 @@
+{
+  "name": "@dloizides/bead-chart",
+  "version": "0.0.0",
+  "description": "One thread-path rule for bead charts: PatternDoc schema, peyote, brick and loom geometry, stitch order, word chart, counts, SVG, Miyuki Delica colour data, rule-based motif generator, recolour and licence codes. No DOM, no React.",
+  "keywords": [
+    "beading",
+    "peyote",
+    "brick-stitch",
+    "loom",
+    "delica",
+    "word-chart",
+    "pattern"
+  ],
+  "author": "dloizides",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openmindednewby/bead-chart.git"
+  },
+  "homepage": "https://github.com/openmindednewby/bead-chart#readme",
+  "bugs": {
+    "url": "https://github.com/openmindednewby/bead-chart/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "browser": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE-DATA.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsup",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "security:audit": "npm audit --audit-level=high",
+    "prepublishOnly": "npm run clean && npm run build && npm run test"
+  },
+  "dependencies": {
+    "@dloizides/color-science": "^0.1.0",
+    "@dloizides/game-rng": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.19.32",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.0",
+    "ts-jest": "^29.1.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  }
+}
