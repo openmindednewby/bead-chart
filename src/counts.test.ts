@@ -27,13 +27,13 @@ describe('beadCounts', () => {
   it('with a tied count, orders by code', () => {
     const counts = beadCounts({
       ...pattern,
-      width: 2,
+      width: 3,
       height: 1,
-      palette: ['DB0002', 'DB0001'],
-      cells: [[0, 1]],
+      palette: ['DB0002', 'DB0001', 'DB0003'],
+      cells: [[0, 1, 2]],
     });
 
-    expect(counts.lines.map((line) => line.code)).toEqual(['DB0001', 'DB0002']);
+    expect(counts.lines.map((line) => line.code)).toEqual(['DB0001', 'DB0002', 'DB0003']);
   });
 });
 

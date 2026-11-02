@@ -47,6 +47,12 @@ describe('recolour', () => {
     expect(call).toThrow('Unknown Delica code');
   });
 
+  it('with an index past the palette, leaves that cell alone', () => {
+    const result = recolour({ ...pattern, cells: [[7]] }, { DB0001: 'DB0010' });
+
+    expect(result.cells).toEqual([[7]]);
+  });
+
   it('with a mapping, leaves the source doc unchanged', () => {
     const before = JSON.stringify(pattern);
 
