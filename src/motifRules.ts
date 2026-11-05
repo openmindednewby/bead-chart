@@ -1,6 +1,20 @@
 import { mulberry32 } from '@dloizides/game-rng';
 
 import { MotifKind } from './MotifKind';
+import {
+  argyle,
+  crosses,
+  flame,
+  hearts,
+  herringbone,
+  houndstooth,
+  oxo,
+  stars,
+  steppedPeaks,
+  triangles,
+  twist,
+  waves,
+} from './motifShapes';
 
 export interface MotifCell {
   readonly x: number;
@@ -37,4 +51,16 @@ export const MOTIF_RULES: Readonly<Record<MotifKind, (cell: MotifCell) => number
     Math.floor(cell.x / cell.period) + Math.floor(cell.y / cell.period),
   [MotifKind.Zigzag]: zigzagBand,
   [MotifKind.Scatter]: scatterBand,
+  [MotifKind.Waves]: waves,
+  [MotifKind.SteppedPeaks]: steppedPeaks,
+  [MotifKind.Flame]: flame,
+  [MotifKind.Houndstooth]: houndstooth,
+  [MotifKind.Argyle]: argyle,
+  [MotifKind.Herringbone]: herringbone,
+  [MotifKind.Triangles]: triangles,
+  [MotifKind.Twist]: twist,
+  [MotifKind.Oxo]: oxo,
+  [MotifKind.Crosses]: crosses,
+  [MotifKind.Stars]: stars,
+  [MotifKind.Hearts]: hearts,
 };

@@ -133,3 +133,13 @@ describe('wovenRowCount', () => {
     expect(count).toBe(48);
   });
 });
+
+describe('wovenRowCount with no rows', () => {
+  it('with a chart of zero rows, returns 0', () => {
+    const doc = solidDoc(Stitch.Loom, 3, 0);
+
+    const count = wovenRowCount(doc);
+
+    expect(count).toBe(0);
+  });
+});

@@ -1,6 +1,8 @@
 import type { HarmonyCount } from '@dloizides/color-science';
 
+import type { MotifFamily } from './MotifFamily';
 import type { MotifKind } from './MotifKind';
+import type { MotifSymmetry } from './MotifSymmetry';
 import type { PatternDocIssue } from './PatternDocIssue';
 import type { RowDirection } from './RowDirection';
 import type { Stitch } from './Stitch';
@@ -78,6 +80,30 @@ export interface MotifConfig {
   readonly colourCount: HarmonyCount;
   readonly baseColour?: string;
   readonly period?: number;
+  readonly params?: MotifParams;
+}
+
+export interface MotifParams {
+  readonly symmetry?: MotifSymmetry;
+  readonly repeat?: number;
+  readonly density?: number;
+  readonly layers?: readonly MotifKind[];
+  readonly noise?: number;
+}
+
+export interface MotifPreset {
+  readonly id: string;
+  readonly name: string;
+  readonly family: MotifFamily;
+  readonly kind: MotifKind;
+  readonly colourCount: HarmonyCount;
+  readonly period?: number;
+  readonly params: MotifParams;
+}
+
+export interface ShuffledMotif {
+  readonly config: MotifConfig;
+  readonly presetId: string | undefined;
 }
 
 export interface PatternDocValidation {
