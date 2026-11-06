@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1 - 2026-11-06
+
+- BEAD-FIG-1 "Figure shapes in bead-chart" review fix: the CJS build of `@dloizides/bead-chart/figures` now loads the figure index and bitmap chunks with `require()` (files in `dist/figure-data/`), so Jest and other CJS consumers no longer need `--experimental-vm-modules`. The ESM build keeps lazy `import()`.
+- Source maps stay off: with them the tarball reached 4.9 MB, almost all of it maps of the figure bitmap chunks.
+
 ## 0.4.0 - 2026-11-06
 
 - Figures (BEAD-FIG-1 "Figure shapes in bead-chart"): `figureToChart` rasterises a figure on the bead centres of `geometry()`, quantises it to Delica and shades one-colour glyphs in 2-3 tones from a top-left light; width clamps to `FIGURE_MIN_WIDTH` (40).
