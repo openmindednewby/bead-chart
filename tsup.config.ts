@@ -33,13 +33,7 @@ const shared: Options = {
   external: [],
 };
 
-export default defineConfig([
-  {
-    ...shared,
-    entry: { index: 'src/index.ts', figures: 'src/figures/index.ts' },
-    format: ['esm'],
-    splitting: true,
-  },
+export const CJS_BUILDS: Options[] = [
   {
     ...shared,
     entry: { index: 'src/index.ts', figures: 'src/figures/index.ts' },
@@ -57,4 +51,14 @@ export default defineConfig([
     format: ['cjs'],
     splitting: false,
   },
+];
+
+export default defineConfig([
+  {
+    ...shared,
+    entry: { index: 'src/index.ts', figures: 'src/figures/index.ts' },
+    format: ['esm'],
+    splitting: true,
+  },
+  ...CJS_BUILDS,
 ]);
