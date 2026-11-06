@@ -1,7 +1,7 @@
 {
   "name": "@dloizides/bead-chart",
   "version": "0.3.0",
-  "description": "One thread-path rule for bead charts: PatternDoc schema, peyote, brick and loom geometry, stitch order, word chart, counts, SVG, Miyuki Delica colour data, rule-based motif generator, recolour and licence codes. No DOM, no React.",
+  "description": "One thread-path rule for bead charts: PatternDoc schema, peyote, brick and loom geometry, stitch order, word chart, counts, SVG, Miyuki Delica colour data, rule-based motif generator, recolour, licence codes and a lazy catalogue of 21,000+ figures from Noto fonts and Noto Emoji. No DOM, no React.",
   "keywords": [
     "beading",
     "peyote",
@@ -42,13 +42,21 @@
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
       }
+    },
+    "./figures": {
+      "types": "./dist/figures.d.ts",
+      "import": "./dist/figures.mjs",
+      "require": "./dist/figures.js",
+      "default": "./dist/figures.js"
     }
   },
   "files": [
     "dist",
     "README.md",
     "CHANGELOG.md",
-    "LICENSE-DATA.md"
+    "LICENSE-DATA.md",
+    "NOTICE",
+    "LICENSES"
   ],
   "sideEffects": false,
   "engines": {

@@ -1,0 +1,20 @@
+@dloizides/bead-chart
+Copyright dloizides. Code under the MIT License (LICENSE). Delica colour data under CC BY 4.0 (LICENSE-DATA.md).
+
+The figure catalogue (dist/figures*, built from src/figures/generated) holds bead bitmaps derived from third-party sources.
+No font file and no source image ships in this package; each figure is a 48x48 rasterisation of one glyph or image.
+
+Glyph figures rasterised from Noto fonts, Copyright Google LLC and the Noto Project Authors, SIL Open Font License 1.1.
+  Source: https://github.com/notofonts/notofonts.github.io
+  Licence text: LICENSES/OFL-1.1-noto-fonts.txt
+  The generator keeps a font only when its name table states the SIL Open Font License; NotoSansOldPersic was dropped (not found).
+
+Figures derived from Noto Emoji, Copyright Google Inc., Apache License 2.0, modified (rasterised to beads, colours quantised to Delica).
+  Source: https://github.com/googlefonts/noto-emoji (2D/png/72, single-codepoint emoji only; no flags)
+  Licence text: LICENSES/Apache-2.0-noto-emoji.txt
+
+Figure names, keywords and emoji groups from Unicode CLDR and Unicode emoji data, Copyright Unicode, Inc., Unicode License v3.
+  Source: https://github.com/unicode-org/cldr-json and https://unicode.org/Public/emoji/latest/emoji-test.txt
+  Licence text: LICENSES/Unicode-3.0.txt
+
+No meme or branded-character image is included.

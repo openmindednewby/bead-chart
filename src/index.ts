@@ -7,6 +7,11 @@ export {
   nearestDelica,
   requireDelica,
 } from './delica';
+export { decodeFigureBitmap, encodeFigureBitmap, FIGURE_SOURCE_SIZE } from './figureBitmap';
+export { FIGURE_MIN_WIDTH, figureToChart, figureWidth } from './figureChart';
+export { figureChartHeight, sampleFigure } from './figureSample';
+export { FigureTones } from './FigureTones';
+export type { FigureChartOptions, FigureSource } from './figures/figureTypes';
 export { beadPosition, geometry } from './geometry';
 export { LicenceCode } from './LicenceCode';
 export { DEFAULT_LICENCE, isLicenceCode, LICENCE_TERMS } from './licences';
