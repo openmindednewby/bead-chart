@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0 - 2026-11-06
+
+- Figures (BEAD-FIG-1 "Figure shapes in bead-chart"): `figureToChart` rasterises a figure on the bead centres of `geometry()`, quantises it to Delica and shades one-colour glyphs in 2-3 tones from a top-left light; width clamps to `FIGURE_MIN_WIDTH` (40).
+- `@dloizides/bead-chart/figures`: lazy catalogue of 21,144 figures (19,745 Noto font glyphs, 1,399 Noto Emoji), `loadFigureIndex`, `loadFigure`, `searchFigures`, `FIGURE_LICENCES`, `FIGURE_FAMILIES`; bitmaps load per chunk, never from the main entry.
+- `LICENSES/` (OFL-1.1, Apache-2.0, Unicode-3.0) and `NOTICE`; generator `scripts/figures/build_catalogue.py`. Source maps are no longer shipped (catalogue size).
+
 ## 0.3.0 - 2026-11-06
 
 - Parametric motif engine for BEAD-SHAPES-1 "More /make shapes and a real shuffle": `MotifConfig.params` (`symmetry`, `repeat`, `density`, `layers`, `noise`) with `MOTIF_PARAM_LIMITS` and `resolveMotifParams`. Without params, or with default params, the six 0.2.0 motifs render byte-identical (golden test).

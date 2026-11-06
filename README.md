@@ -56,3 +56,16 @@ Code: MIT. `src/data/delica.json`: [CC BY 4.0](LICENSE-DATA.md), so every produc
 > Color data: craft-color-codes by MakeBead (https://makebead.com)
 
 Taken from https://github.com/makebead/craft-color-codes at commit `84dbdc26`, by `scripts/import-delica.mjs`. Changes: dropped `rgb`; `discontinued` set on every colour. MakeBead derives each hex from Miyuki's product photo, so it names the right bead at an approximate shade, and metallic or AB finishes cannot be one flat colour.
+
+## Figures
+
+```ts
+import { figureToChart, Stitch } from '@dloizides/bead-chart';
+import { loadFigure, loadFigureIndex, searchFigures } from '@dloizides/bead-chart/figures';
+
+const [fox] = searchFigures(await loadFigureIndex(), 'fox');
+const source = fox && (await loadFigure(fox));
+const chart = source && figureToChart(source, { stitch: Stitch.Peyote, width: 40 });
+```
+
+21,144 figures from Noto fonts (OFL-1.1) and Noto Emoji (Apache-2.0), names from Unicode CLDR (Unicode-3.0); see `NOTICE` and `LICENSES/`. Regenerate with `python scripts/figures/build_catalogue.py <cache> src/figures/generated LICENSES <noto-emoji clone>`.
