@@ -1,3 +1,5 @@
+export { lensBox } from './chartLens';
+export type { LensBox, ScrollBox } from './chartLens';
 export { beadCounts, shoppingList } from './counts';
 export {
   availableDelica,
